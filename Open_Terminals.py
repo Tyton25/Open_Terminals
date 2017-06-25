@@ -1,7 +1,7 @@
 !#/usr/bin/python2
 
 
-import csv, optparse, os
+import csv, optparse, os, sys
 from itertools import chain
 
 gnometerm = 'gnome-terminal '
