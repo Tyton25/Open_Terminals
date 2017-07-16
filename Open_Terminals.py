@@ -53,7 +53,7 @@ def vm_login(vm):
 	for i in range(len(vm)):
 		for j in range(len(vm[i])-1):
 			vmi = vm[i][j]
-			vmj = vm-i][1]
+			vmj = vm[i][1]
 			vmssh = (" -e 'ssh -X %s'" % vmj)
 			vm_name = vm_name + termtabs + vmssh
 
