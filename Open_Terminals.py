@@ -40,24 +40,23 @@ options.parser = p.parser()
 			open_tabs = ope_tabs + ' &'
 			os.system(open_tabs)
 		if opts.input_file:
-			infile = csv.parser(open(opts.input_file, 'rU'), delimiter = '\t')
+			infile = csv.reader(open(opts.input_file, 'rU'), delimiter = '\t')
 			rows = list(opts.infile)
-			open_terms_cmd = vm_login(rows) + " &"
+			open_terms_cmd = vm_login(rows)
 			os.system(open_terms_cmd)
 
 def vm_login(vm):
-	gnometerms = 'gnome-terminal'
+	gnome_terms = 'gnome-terminal'
 	term_tabs = ' --tabs --title '
-	vm_name = gnometerms
 
 	for i in range(len(vm)):
 		for j in range(len(vm[i])-1):
 			vmi = vm[i][j]
 			vmj = vm[i][1]
 			vmssh = (" -e 'ssh -X %s'" % vmj)
-			vm_name = vm_name + termtabs + vmssh
-
-	return vm_name
+			gnome_terms = gnome_terms + term_tabs + vmssh
+		gnome_terms = gnome_terms + ' &'
+	return gnome_terms
 
 if __name__=='__main__':
 	main()
