@@ -3,6 +3,7 @@
 
 import csv, optparse, os, sys
 from itertools import chain
+from collections import OrderedDict
 
 gnometerm = 'gnome-terminal '
 
